@@ -1,0 +1,24 @@
+#cloud-config
+autoinstall:
+  version: 1
+  locale: en_US
+  keyboard:
+    layout: us
+  ssh:
+    install-server: true
+    allow-pw: true
+  packages:
+    - qemu-guest-agent
+    - sudo
+  user-data:
+    package_upgrade: true
+    timezone: America/Denver
+    users:
+      - name: ubuntu
+        # ssh publickey
+        ssh_authorized_keys:
+          - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDuD9/rLFKN4HgYLeLT/GyOS61ZhXoFD0np2LW7gAwUVEg/qc7Ffl95iUQ2SIyiwzpWvdtSAmJ2CIkxaxth76YzEgZqAjGRWAPaKKxL5XdyKiCU8ToCfUc0sY32m3btwN8qLc0+jKcTRTkIpuPR/Xm6gN3WI0CVpVTd+0NJcDNfNVvYbrqhCN2mw315QDrhgRntqj6OKaxGI/TNYMFHLgxooBJeoYVEFFQRQ6xtsaFKS5l3GET4dfv4F0tMjEJ7ceiDr/mHZs/w5RV3lpQusjEuZ7ZNxxFPoGV9vSgCVAiTXxMw2hgiqBfgSMXwJ00zT/grIBzJANP5LMpZsHP92Z8Kh6V9XeCyQ4KtoxL5LDskxYEmOwL3mgHnYxCLpWqHL+VUCrptwCrhuUeTxvpfHTPBuccj/tkYWwYJ8mBzmo11z+bXiJfbST13IvEp9lhvtOEPbVabRXUfNvJot3nmE85vtMxLH9S8A6mU93ZgyBddUBnqa2Tmrq11Cw28VOOJQ2ofr1NrDTz5Kbha65qFYcYq3tm9EW7kl2qojVGPqqqIRR7NnJh4ZletHSxyA3L0Z7EqpiDEx37HS/tMo1vi5K1whp4r+EFdAXr+03zcNOQ9YK1aByW/y7cF2BxZXQu0DD0HaIMfecqtv6E04+zaxh6e9+aPDAHk5rcYc9bYIAyM2w== tyler@Tylers-Mac-mini.local"
+        groups: [adm, cdrom, dip, plugdev, lxd, sudo]
+        lock-passwd: false
+        sudo: ALL=(ALL) NOPASSWD:ALL
+        shell: /bin/bash
