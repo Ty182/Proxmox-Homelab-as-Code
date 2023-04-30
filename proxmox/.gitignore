@@ -1,3 +1,0 @@
-# files to not upload to github
-.terraform*
-terraform.*
