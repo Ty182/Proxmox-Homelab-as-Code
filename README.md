@@ -1,4 +1,4 @@
-# Automated Homelab with Proxmox and Terraform
+# Automated Homelab with Proxmox, Packer, and Terraform
 
 The aim for this project is to build a homelab using infrastructure as code and automation. Rather than spend 30min configuring unique VMs, we'll be able to deploy and use VMs within minutes.
 
